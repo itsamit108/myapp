@@ -6,7 +6,10 @@ import 'post.dart';
 import 'post_detail.dart';
 
 class PostList extends StatefulWidget {
+  const PostList({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _PostListState createState() => _PostListState();
 }
 
@@ -42,10 +45,12 @@ class _PostListState extends State<PostList> {
       pagingController: _pagingController,
       builderDelegate: PagedChildBuilderDelegate<Post>(
         itemBuilder: (context, item, index) => Card(
-          margin: EdgeInsets.all(8),
+          margin: const EdgeInsets.all(8),
           child: ListTile(
-            title:
-                Text(item.title, style: TextStyle(fontWeight: FontWeight.bold)),
+            title: Text(
+              item.title,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
             subtitle: Text(item.body),
             onTap: () {
               Navigator.push(

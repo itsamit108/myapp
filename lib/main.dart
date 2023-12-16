@@ -4,10 +4,14 @@ import 'post_list.dart';
 import 'splash_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +21,9 @@ class MyApp extends StatelessWidget {
       ),
       home: FutureBuilder(
         // Simulate a loading delay
-        future: Future.delayed(Duration(seconds: 2)),
+        future: Future.delayed(
+          const Duration(seconds: 2),
+        ),
         builder: (context, AsyncSnapshot snapshot) {
           // Show splash screen while waiting for app resources to load:
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -26,9 +32,9 @@ class MyApp extends StatelessWidget {
             // Loading is done, return the app:
             return Scaffold(
               appBar: AppBar(
-                title: Text('Flutter Pagination Demo'),
+                title: const Text('Flutter Pagination Demo'),
               ),
-              body: PostList(),
+              body: const PostList(),
             );
           }
         },

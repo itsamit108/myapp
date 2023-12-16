@@ -7,7 +7,7 @@ import 'splash_screen.dart';
 class PostDetail extends StatelessWidget {
   final int postId;
 
-  PostDetail({required this.postId});
+  const PostDetail({super.key, required this.postId});
 
   @override
   Widget build(BuildContext context) {
